@@ -7,26 +7,30 @@ import SideBar from "../../components/SideBar";
 
 class App extends Component {
   state = {
-    showSideBar: false
-  }
+    showSidebar: false
+  };
 
   toggleSideBar = () => {
-    this.setState(prevSt => {
-      return { showSideBar: !prevSt.showSideBar }
+    this.setState(prevState => {
+      return { showSidebar: !prevState.showSidebar };
     });
-  }
+  };
+
   render() {
     return (
       <div>
         <Toolbar toggleSideBar={this.toggleSideBar} />
+
         <SideBar
-          showSideBar={this.state.showSideBar}
-          toggleSideBar={this.state.toggleSideBar} />
+          showSidebar={this.state.showSidebar}
+          toggleSideBar={this.toggleSideBar}
+        />
+
         <main className={css.Content}>
           <BurgerPage />
         </main>
       </div>
-    )
+    );
   }
 }
 

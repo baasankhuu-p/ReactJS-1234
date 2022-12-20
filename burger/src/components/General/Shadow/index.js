@@ -3,7 +3,7 @@ import css from "./style.module.css";
 
 const Shadow = props => {
   return props.show ? (
-    <div onClick={props.closeConfirmModal} className={css.Shadow}></div>
+    <div onClick={props.darahad} className={css.Shadow}></div>
   ) : null;
 };
 

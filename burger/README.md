@@ -471,3 +471,9 @@ export default Comment;
 ```C
 
 ```
+
+# 51) Firebase гэж юу вэ буюу SERVERLESS програмчлалын эринд тавтай морил!
+
+```C
+
+```
