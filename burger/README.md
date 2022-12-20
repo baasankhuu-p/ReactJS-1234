@@ -361,3 +361,81 @@ export default Comment;
 ```C
 
 ```
+
+## 37) Хачиртай талхны орцыг оруулах BuildControls, BuildControl компонентийг бичих
+
+```C
+
+```
+
+## 40) Захиалга хийх товчийг нэмэх, кодын нэмэлт засварууд
+
+```C
+    Өмнө
+        <BuildControl
+                disable={props.disabledIncredient}
+                ortsNemeh={props.ortsNemeh}
+                ortsHasah={props.ortsHasah}
+                type="salad"
+                text="салад" />
+        <BuildControl
+                disable={props.disabledIncredient}
+                ortsNemeh={props.ortsNemeh}
+                ortsHasah={props.ortsHasah}
+                type="bacon"
+                text="Гахайн мах" />
+        <BuildControl
+                disable={props.disabledIncredient}
+                ortsNemeh={props.ortsNemeh}
+                ortsHasah={props.ortsHasah}
+                type="meat"
+                text="үхрийн мах" />
+        <BuildControl
+                disable={props.disabledIncredient}
+                ortsNemeh={props.ortsNemeh}
+                ortsHasah={props.ortsHasah}
+                type="cheese"
+                text="бяслаг" />
+    `Сайжруулалт`
+        const controls = {
+            bacon: 'Гахайн мах',
+            cheese: 'Бяслаг',
+            meat: 'Үхрийн мах',
+            salad: 'салад'
+        }
+        return(
+            <div>
+                {
+                    Object.keys(controls).map(el => (
+                        <BuildControl
+                            disable={props.disabledIncredient}
+                            ortsNemeh={props.ortsNemeh}
+                            ortsHasah={props.ortsHasah}
+                            type={el}
+                            text={controls[el]} />
+                    ))
+                }
+            </div>
+        )
+
+        Logic
+        this.setState({
+            purchasing: newPrice > 2000,//true OR false
+            totalPrice: newPrice,
+            incredients: newIncredients
+        });
+```
+
+## 41) Захиалгыг баталгаажуулах модал цонхыг хийцгээе!
+
+```C
+    <Modal>
+        <h1>Та итгэлтэй байна уу</h1>
+        <p>Захиалгын дэлгэрэнгүй</p>
+    </Modal>
+
+    Modal компонентийн таг дотор элемент нэмэхдээ
+    return <div>{props.children}</div>
+```
+
+## 43) Модал цонхыг динамикаар гаргаж ирэх
