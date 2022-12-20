@@ -439,3 +439,35 @@ export default Comment;
 ```
 
 ## 43) Модал цонхыг динамикаар гаргаж ирэх
+
+```C
+    /*inline css бичих арга*/
+    style={
+        {
+            transform: props.show ? "translateY(0)" : "translateY(-100vh)",
+            opacity: props.show ? '1' : '0'
+        }
+    }
+```
+
+## 45) Button компонентийг бичиж OrderSummary компонентод ашиглацгаая
+
+```C
+    props-р module css-н нэрийг дамжуулж авахдаа
+    - import Css from "./style.module.css";
+    `${Css[props.btnType]}`
+    байдлаар авна
+```
+
+## 46) Logo компонентийг хийж Toolbar компонентод ашиглах, serve ашиглан production build кодыг ажиллуулах
+
+```C
+    npm run build -> react deerh code -g build hj live server bdlaar ajluulh blmjtoi
+    npm serv
+```
+
+## 47) Цэс буюу Menu, MenuItem компонентууыг програмчилцгаая
+
+```C
+
+```

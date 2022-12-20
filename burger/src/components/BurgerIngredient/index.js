@@ -1,27 +1,25 @@
 import React from "react";
-import Css from "./style.module.css";
 
-const BurgerIngredient = (props) => {
-    switch (props.type) {
-        case 'bread-top':
-            return (
-                <div className={Css.BreadTop}>
-                    <div className={`${Css.Seed}`}></div>
-                    <div className={`${Css.Seed} ${Css.Second}`}></div >
-                    <div className={`${Css.Seed} ${Css.Third}`}></div >
-                    <div className={`${Css.Seed} ${Css.Fourth}`}></div >
-                </div >
-            )
-        case 'salad':
-            return (<div className={Css.Salad}></div>)
-        case 'bacon':
-            return (<div className={Css.Bacon}></div>)
-        case 'cheese':
-            return (<div className={Css.Cheese}></div>)
-        case 'meat':
-            return (<div className={Css.Meat}></div>)
-        case 'bread-bottom':
-            return (<div className={Css.BreadBottom}></div>)
-    }
+import css from "./style.module.css";
+
+const BurgerIngredient = props => {
+  if (props.type === "bread-top")
+    return (
+      <div className={css.BreadTop}>
+        <div className={css.Seed}></div>
+        <div className={`${css.Seed} ${css.Second}`}></div>
+        <div className={`${css.Seed} ${css.Third}`}></div>
+        <div className={`${css.Seed} ${css.Fourth}`}></div>
+      </div>
+    );
+  if (props.type === "salad") return <div className={css.Salad}></div>;
+  if (props.type === "bacon") return <div className={css.Bacon}></div>;
+  if (props.type === "meat") return <div className={css.Meat}></div>;
+  if (props.type === "cheese") return <div className={css.Cheese}></div>;
+  if (props.type === "bread-bottom")
+    return <div className={css.BreadBottom}></div>;
+
+  return <div>...</div>;
 };
-export default BurgerIngredient
+
+export default BurgerIngredient;

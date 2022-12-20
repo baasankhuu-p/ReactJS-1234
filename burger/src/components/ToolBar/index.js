@@ -1,14 +1,17 @@
-import React, { Component } from "react";
-import Css from "./style.module.css";
-class Toolbar extends Component {
-    render() {
-        return (
-            <header className={Css.ToolBar}>
-                <div>....</div>
-                <div>Logo</div>
-                <nav>Цэс</nav>
-            </header>
-        )
-    }
-}
+import React from "react";
+
+import css from "./style.module.css";
+import Logo from "../Logo";
+import Menu from "../Menu";
+
+const Toolbar = () => (
+  <header className={css.Toolbar}>
+    <div>...</div>
+    <Logo />
+    <nav className={css.HideOnMobile}>
+      <Menu />
+    </nav>
+  </header>
+);
+
 export default Toolbar;

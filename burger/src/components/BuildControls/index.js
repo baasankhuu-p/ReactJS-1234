@@ -1,25 +1,35 @@
 import React from "react";
+
 import BuildControl from "../BuildControl";
-import Css from "./style.module.css"
-const BuildControls = (props) => {
+import css from "./style.module.css";
 
-    return (
-        <div className={Css.BuildControls}>
-            <p>Нийт үнэ: <strong>{props.price}</strong></p>
-            {
-                Object.keys(props.incredientsNames).map((el) => (
-                    <BuildControl
-                        key={el}
-                        disable={props.disabledIncredient}
-                        ortsNemeh={props.ortsNemeh}
-                        ortsHasah={props.ortsHasah}
-                        type={el}
-                        text={props.incredientsNames[el]} />
-                ))
-            }
-            <button disabled={props.disabled} className={Css.OrderButton}>ЗАХИАЛАХ</button>
-        </div>
-    );
-}
+const BuildControls = props => {
+  return (
+    <div className={css.BuildControls}>
+      <p>
+        Бургерийн үнэ : <strong>{props.price}</strong>
+      </p>
 
-export default BuildControls
+      {Object.keys(props.ingredientsNames).map(el => (
+        <BuildControl
+          key={el}
+          ortsHasah={props.ortsHasah}
+          ortsNemeh={props.ortsNemeh}
+          disabled={props.disabledIngredients}
+          type={el}
+          orts={props.ingredientsNames[el]}
+        />
+      ))}
+
+      <button
+        onClick={props.showConfirmModal}
+        disabled={props.disabled}
+        className={css.OrderButton}
+      >
+        ЗАХИАЛАХ
+      </button>
+    </div>
+  );
+};
+
+export default BuildControls;

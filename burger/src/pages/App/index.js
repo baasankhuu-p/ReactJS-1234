@@ -1,11 +1,16 @@
-import Toolbar from "../../components/ToolBar"
-import BurgerPage from "../BurgerPage"
-import Css from "./style.module.css"
+import React from "react";
+import css from "./style.module.css";
+
+import Toolbar from "../../components/ToolBar";
+import BurgerPage from "../BurgerPage";
+import SideBar from "../../components/SideBar";
+
 function App() {
   return (
-    <div className="App">
+    <div>
       <Toolbar />
-      <main className={Css.Content}>
+      <SideBar />
+      <main className={css.Content}>
         <BurgerPage />
       </main>
     </div>
