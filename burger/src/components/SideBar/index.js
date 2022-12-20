@@ -5,10 +5,11 @@ import Logo from "../Logo";
 import Menu from "../Menu";
 import Shadow from "../General/Shadow";
 
-const SideBar = () => {
+const SideBar = (props) => {
+
   return (
     <div>
-      <Shadow show />
+      <Shadow show={props.showSideBar} />
       <div className={css.SideBar}>
         <div className={css.Logo}>
           <Logo />
